@@ -1,0 +1,18 @@
+cookie:
+  expiry_days: 30
+  key: "geheim_sleutel"
+  name: "mijn_cookie"
+
+credentials:
+  usernames:
+    jowi:
+      name: Jowi Steenhoff 
+      email: jowi@billybird.nl
+      failed_login_attempts: 0
+      first_name: Jowi
+      last_name: Steenhoff
+      logged_in: False
+      password: geheim123
+      roles:
+        - admin
+

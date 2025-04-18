@@ -52,7 +52,7 @@ status = st.session_state.get("authentication_status")
 if status is None:
     kolom_links, kolom_midden, kolom_rechts = st.columns([1, 7, 1])
     with kolom_midden:
-        st.image("logo_textonly.png", use_container_width=True)
+        # st.image("logo_textonly.png", use_container_width=True)
         st.markdown("<br>", unsafe_allow_html=True)
 
 # Loginformulier tonen

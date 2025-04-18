@@ -14,6 +14,10 @@ from datetime import datetime, timedelta
 from xgboost import XGBRegressor
 import altair as alt
 
+import os
+st.write("DEBUG - Bestaat logo?", os.path.exists("Logo/logo_textonly.png"))
+
+
 # --------------------------------------------------
 #  Pagina instellingen
 # --------------------------------------------------

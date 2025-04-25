@@ -145,7 +145,7 @@ elif status is True:
     df_tickets['date'] = pd.to_datetime(df_tickets['date'])
 
     # --- Split naar train/test sets ---
-    test_dagen = [startdatum + timedelta(days=i) for i in range(5)]
+    test_dagen = [startdatum + timedelta(days=i) for i in range(4)]
 
     test_leden = df_leden[df_leden['date'].isin(test_dagen)]
     train_leden = df_leden[~df_leden['date'].isin(test_dagen)]

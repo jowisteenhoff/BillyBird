@@ -24,7 +24,7 @@ st.markdown("<style>body {text-align: center;}</style>", unsafe_allow_html=True)
 st.markdown(
     """
     <head>
-        <link rel="icon" href="Logo/logo_bird.ico" type="image/x-icon">
+        <link rel="icon" href="logo_bird.ico" type="image/x-icon">
     </head>
     """, 
     unsafe_allow_html=True
@@ -52,7 +52,7 @@ status = st.session_state.get("authentication_status")
 if status is None:
     kolom_links, kolom_midden, kolom_rechts = st.columns([1, 7, 1])
     with kolom_midden:
-        st.image("Logo/logo_textonly.png", use_container_width=True)
+        st.image("logo_textonly.png", use_container_width=True)
         st.markdown("<br>", unsafe_allow_html=True)
 
 # Loginformulier tonen
@@ -85,7 +85,7 @@ elif status is False:
     st.error("De gebruikersnaam of het wachtwoord is onjuist.")
 
 elif status is True:
-    authenticator.logout("Uitloggen", "sidebar")
+    authenticator.ut("Uitloggen", "sidebar")
     # --------------------------------------------------
     # PROGNOSE MODEL
     # --------------------------------------------------
@@ -209,7 +209,7 @@ elif status is True:
     # --------------------------------------------------
     # WEERGAVE IN DASHBOARD (OPENING + MORGEN)
     # --------------------------------------------------
-    st.image("Logo/logo_textonly.png")
+    st.image("logo_textonly.png")
     st.title("_Bezoekersdashboard_")
     st.markdown("Gebruik de selectie in de zijbalk om een startdatum te kiezen voor voorspellingen.")
     st.markdown("---")

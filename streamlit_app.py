@@ -14,6 +14,8 @@ from datetime import datetime, timedelta
 from xgboost import XGBRegressor
 import altair as alt
 
+st.image("https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png", use_container_width=True)
+
 # --------------------------------------------------
 #  Pagina instellingen
 # --------------------------------------------------

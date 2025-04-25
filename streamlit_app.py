@@ -23,7 +23,7 @@ st.markdown("<style>body {text-align: center;}</style>", unsafe_allow_html=True)
 st.markdown(
     """
     <head>
-        <link rel="icon" href="logo_bird.ico" type="image/x-icon">
+        <link rel="icon" href="Logo/logo_bird.ico" type="image/x-icon">
     </head>
     """, 
     unsafe_allow_html=True
@@ -68,11 +68,11 @@ authenticator = stauth.Authenticate(
 # Check of gebruiker al is ingelogd
 status = st.session_state.get("authentication_status")
 
-# Logo boven loginformulier (alleen als nog niet ingelogd)
+#  boven loginformulier (alleen als nog niet ingelogd)
 if status is None:
     kolom_links, kolom_midden, kolom_rechts = st.columns([1, 7, 1])
     with kolom_midden:
-        st.image("Logo/logo_textonly.png")
+        st.image("/_textonly.png")
         st.markdown("<br>", unsafe_allow_html=True)
 
 # Loginformulier tonen
@@ -230,7 +230,7 @@ elif status is True:
     # --------------------------------------------------
     # WEERGAVE IN DASHBOARD (OPENING + MORGEN)
     # --------------------------------------------------
-    st.image("logo_textonly.png")
+    st.image("Logo/logo_textonly.png")
     st.title("_Bezoekersdashboard_")
     st.markdown("Gebruik de selectie in de zijbalk om een startdatum te kiezen voor voorspellingen.")
     st.markdown("---")

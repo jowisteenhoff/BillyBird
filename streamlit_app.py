@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 from xgboost import XGBRegressor
 import altair as alt
 
--------------------------------------
+# -------------------------------------
 #  Pagina instellingen
 # --------------------------------------------------
 # HTML Styling voor centreren van de hele pagina

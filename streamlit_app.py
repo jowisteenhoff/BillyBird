@@ -7,7 +7,6 @@ import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
 import os
-import streamlit as st
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
@@ -468,4 +467,8 @@ elif status is True:
 
         with colC:
                 # Weergeef de temperatuur met grotere grootte
-                st.markdown(f"<h1 style='text-align: center; font-size: 30px;'>{temp_morgen:.1f}°C</h1>", unsafe_allow_html=True)   
+                if not pd.isna(temp_morgen):
+                    st.markdown(f"<h1 style='text-align: center; font-size: 30px;'>{temp_morgen:.1f}°C</h1>", unsafe_allow_html=True)
+                else:
+                    st.markdown("<h1 style='text-align: center; font-size: 30px;'>Onbekend</h1>", unsafe_allow_html=True)
+

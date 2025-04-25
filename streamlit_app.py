@@ -84,7 +84,7 @@ elif status is False:
     st.error("De gebruikersnaam of het wachtwoord is onjuist.")
 
 elif status is True:
-    authenticator.ut("Uitloggen", "sidebar")
+    authenticator.logout("Uitloggen", "sidebar")
     # --------------------------------------------------
     # PROGNOSE MODEL
     # --------------------------------------------------

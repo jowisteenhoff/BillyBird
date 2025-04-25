@@ -45,7 +45,7 @@ st.markdown(
 # --------------------------------------------------
 #  Data laden
 # --------------------------------------------------
-@st.cache_data
+@st.cache_data(ttl=86400) 
 def laad_excel_bestand(pad):
     return pd.read_excel(pad) 
 
@@ -167,7 +167,7 @@ elif status is True:
     sample_weights_leden = gewicht_custom(train_leden['Tickettotaal'])
     sample_weights_tickets = gewicht_custom(train_tickets['Tickettotaal'])
 
-    @st.cache_resource 
+    @st.cache_resource(ttl=86400)
     def run_model(train_df, test_df, sample_weights, label):
         model = XGBRegressor(
             n_estimators=500,
@@ -482,14 +482,7 @@ elif status is True:
         st.markdown("**Testset - Tickets**")
         st.dataframe(test_tickets)
         st.markdown("**Trainset - Tickets**")
-        st.dataframe(train_tickets)
-
-    
- 
-
-
-
-
+        st.dataframe(train_tickets)hij doet 
 
         colA, colB, colC, colD = st.columns([3.3,1,1,3])  
         with colB:

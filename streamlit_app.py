@@ -29,6 +29,27 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown(
+    """
+    <script>
+    const sidebar = window.parent.document.querySelector('section[data-testid="stSidebar"]');
+    if (sidebar) {
+        sidebar.style.transform = 'translateX(-100%)';
+    }
+    </script>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# --------------------------------------------------
+#  Data laden
+# --------------------------------------------------
+@st.cache_data
+def laad_excel_bestand(pad):
+    return pd.read_excel(pad) 
+
+
 # --------------------------------------------------
 #  Authenticatie instellen
 # --------------------------------------------------
@@ -93,8 +114,8 @@ elif status is True:
     tickets_pad = "Test data/hist_tickets_dag.xlsx"
 
     try:
-        df_leden = pd.read_excel(leden_pad)
-        df_tickets = pd.read_excel(tickets_pad)
+        df_leden = laad_excel_bestand(leden_pad)
+        df_tickets = laad_excel_bestand(tickets_pad)
         st.success(f'Welkom {naam}, je bent succesvol ingelogd en de data is succesvol ingeladen!')
     except Exception as e:
         st.error(f'Welkom {naam}, je bent succesvol ingelogd, maar er gaat iets fout bij inladen van bestanden: {e}')
@@ -146,6 +167,7 @@ elif status is True:
     sample_weights_leden = gewicht_custom(train_leden['Tickettotaal'])
     sample_weights_tickets = gewicht_custom(train_tickets['Tickettotaal'])
 
+    @st.cache_resource 
     def run_model(train_df, test_df, sample_weights, label):
         model = XGBRegressor(
             n_estimators=500,

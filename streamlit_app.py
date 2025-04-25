@@ -170,7 +170,7 @@ elif status is True:
     @st.cache_resource(ttl=86400)
     def run_model(train_df, test_df, sample_weights, label):
         model = XGBRegressor(
-            n_estimators=500,
+            n_estimators=300,
             learning_rate=0.1,
             max_depth=7,
             subsample=0.8,

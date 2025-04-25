@@ -253,11 +253,20 @@ elif status is True:
 
     # Vakantie- en evenementen-informatie voor morgen
     is_vakantie = df_leden[df_leden['date'] == morgen]['vakantie_bin'].values[0]  # Check of het vakantie is
-    is_event = df_leden[df_leden['date'] == morgen]['event_weer_interactie'].values[0]  # Check of er een evenement is
     vakantie_naam = df_leden[df_leden['date'] == morgen]['vakantietype'].values[0]  # De naam van de vakantie (als beschikbaar)
-    event_naam = df_leden[df_leden['date'] == morgen]['event'].values[0]  # De naam van het evenement (als beschikbaar)
     vakantie_text = vakantie_naam if is_vakantie == 1 else "Geen vakantie"
-    event_text = event_naam if is_event == 1 else "Geen evenement"
+    
+    event_row = df_leden[df_leden['date'] == morgen]
+    if not event_row.empty:
+        is_event = event_row['event_weer_interactie'].values[0]
+        event_naam = event_row['event'].values[0]
+        
+        if pd.isna(event_naam) or is_event in [0, 0.0, False]:
+            event_text = "Geen evenement"
+        else:
+            event_text = str(event_naam)
+    else:
+        event_text = "Geen data"
 
     # Weergave van de voorspelling voor morgen
     #st.markdown(f"**Weertype:** {weertype_emoji_morgen} **Temperatuur:** {temp_morgen:.1f}°C")

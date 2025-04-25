@@ -268,11 +268,6 @@ elif status is True:
     else:
         event_text = "Geen data"
 
-    # Weergave van de voorspelling voor morgen
-    #st.markdown(f"**Weertype:** {weertype_emoji_morgen} **Temperatuur:** {temp_morgen:.1f}°C")
-    #st.write(f"{vakantie_text}")
-    #st.write(f"{event_text}")
-
     # --------------------------------------------------
     # WEERGAVE IN DASHBOARD (PER DRIE DAGEN)
     # --------------------------------------------------
@@ -482,7 +477,7 @@ elif status is True:
         st.markdown("**Testset - Tickets**")
         st.dataframe(test_tickets)
         st.markdown("**Trainset - Tickets**")
-        st.dataframe(train_tickets)hij doet 
+        st.dataframe(train_tickets)
 
         colA, colB, colC, colD = st.columns([3.3,1,1,3])  
         with colB:
